@@ -22,7 +22,7 @@ class Category
     private Collection $products;
 
     #[ORM\ManyToOne(targetEntity: self::class, inversedBy: 'categories')]
-    #[ORM\JoinColumn(nullable: true)]
+    #[ORM\JoinColumn(nullable: true, onDelete: 'SET NULL')]
     private ?self $parentCategory = null;
 
     #[ORM\OneToMany(mappedBy: 'parentCategory', targetEntity: self::class)]

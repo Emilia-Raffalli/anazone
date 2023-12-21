@@ -22,8 +22,9 @@ class CategoryFixtures extends Fixture
 
         $toys = new Category();
         $toys->setName('Jouets');
-        $manager->persist($toys);
+        $manager->persist($toys); // traite l'entité
+        $this->addReference('TOYS', $toys);
 
-        $manager->flush();
+        $manager->flush(); // met à jour ou insère dans la base
     }
 }
