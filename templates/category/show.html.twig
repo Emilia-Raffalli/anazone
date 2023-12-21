@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Affichage de la catégorie {{ category.name }}{% endblock %}
+
+{% block body %}
+
+ {# {{ dump(categories)}} #}
+
+    <h1>Affichage de la catégorie : {{ category.name }}</h1>
+    <a href="{{ path('app_categories_edit', { id: category.id }) }}">Modifier la catégorie</a>
+
+{% endblock %}
